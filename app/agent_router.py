@@ -22,10 +22,10 @@ def classify_agent(message: str) -> str:
     """Return 'sales', 'support', or 'general' based on message content."""
     lower = message.lower()
 
-    if any(kw in lower for kw in SALES_KEYWORDS):
-        return "sales"
-
     if any(kw in lower for kw in SUPPORT_KEYWORDS):
         return "support"
+
+    if any(kw in lower for kw in SALES_KEYWORDS):
+        return "sales"
 
     return "general"
